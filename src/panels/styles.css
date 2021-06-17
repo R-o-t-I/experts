@@ -1,0 +1,212 @@
+:root {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+    --text-categories: #000000;
+    --accent: #3e2f50;
+    --tabbar_active_icon: #3e2f50;
+    --button_secondary_foreground: #3e2f50;
+    --header_tint: #3e2f50;
+    --button_primary_background: #3e2f50;
+    --icon-categories: #3e2f50;
+    --cat-rulers-block-background: #eee;
+    --cat-rulers-block-color: rgba(0,0,0,0.86);
+}
+  
+body[scheme="space_gray"] {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+    --text-categories: #FFFFFF;
+    -webkit-tap-highlight-color: transparent;
+    --accent: #f8c45e;
+    --tabbar_active_icon: #f8c45e;
+    --button_secondary_foreground: #f8c45e;
+    --header_tint: #f8c45e;
+    --button_primary_background: #f8c45e;
+    --icon-categories: #f8c45e;
+    --cat-rulers-block-background: #2b2b2b;
+    --cat-rulers-block-color: #a3a3a3;
+}
+
+.block-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tappable {
+    border-radius: 20px;
+    margin: 10px 0px;
+}
+
+.block-categorie {
+    width: 115px;
+    margin: 0px 5px;
+    padding: 15px 0px;
+}
+
+@media screen and (max-width: 383px) {
+    .block-categorie {
+        width: 105px;
+        margin: 0px 5px;
+        padding: 15px 0px;
+    }
+}
+
+@media screen and (max-width: 368px) {
+    .block-categorie {
+        width: 90px;
+        margin: 0px 5px;
+        padding: 15px 0px;
+    }
+}
+
+.block-categorie-pc {
+    width: 150px;
+    margin: 0px 5px;
+    padding: 15px 0px;
+}
+  
+.icon-categories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+  
+.text-categories {
+    text-align: center;
+    color: var(--text-categories);
+}
+
+@media screen and (max-width: 368px) {
+    .text-categories {
+        text-align: center;
+        color: var(--text-categories);
+        font-size: 13px;
+    }
+}
+
+.text {
+    color: var(--text-categories);
+}
+
+.achievement-img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90px;
+    height: 90px;
+}
+  
+.achievement-block {
+    display: flex;
+    margin-top: 10px;
+}
+
+.stikers-block {
+    display: flex;
+    margin-top: 10px;
+}
+
+.stikers-img {
+    width: auto;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.achivments-stikers-img {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    width: 80px;
+    height: 80px;
+}
+
+.img-chat-rulers {
+    width: 100%;
+}
+  
+.cat-rulers-block {
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: var(--cat-rulers-block-background);
+    color: var(--cat-rulers-block-color);
+    padding: 10px;
+}
+  
+.gallery-faq {
+    height: 100%;
+}
+
+.tematic-block {
+    display: flex;
+}
+
+.img-tematic-block {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.text-tematic-block {
+    margin-left: 10px;
+}
+
+.button-tematic-block {
+    display: flex;
+}
+
+.stat-card {
+    border-radius: 10px;
+    background-color: var(--stories_skeleton_loader_background);
+    width: 100%;
+    margin-bottom: -20px;
+}
+
+table.text  {
+    width:  100%; /* Ширина таблицы */
+    border-spacing: 0; /* Расстояние между ячейками */
+    color: var(--text_secondary);
+}
+
+table.text td {
+    width: 50%; /* Ширина ячеек */
+    vertical-align: top; /* Выравнивание по верхнему краю */
+}
+   
+td.rightcol { /* Правая ячейка */ 
+    text-align: right; /* Выравнивание по правому краю */
+}
+
+.position-rating {
+    background-color: var(--text_secondary);
+    border-radius: 100px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 2px;
+    font-size: 12px;
+    color: white;
+    z-index: 1;
+}
+
+.position-card {
+    background-color: var(--text_secondary);
+    border-radius: 100px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 5px;
+    color: white;
+    z-index: 1;
+}
