@@ -7,12 +7,12 @@
     -ms-user-select: none;       /* Internet Explorer/Edge */
     user-select: none;           /* Non-prefixed version, currently not supported by any browser */
     --text-categories: #000000;
-    --accent: #3e2f50;
-    --tabbar_active_icon: #3e2f50;
-    --button_secondary_foreground: #3e2f50;
-    --header_tint: #3e2f50;
-    --button_primary_background: #3e2f50;
-    --icon-categories: #3e2f50;
+    --accent: #c2b611;
+    --tabbar_active_icon: #c2b611;
+    --button_secondary_foreground: #c2b611;
+    --header_tint: #c2b611;
+    --button_primary_background: #c2b611;
+    --icon-categories: #c2b611;
     --cat-rulers-block-background: #eee;
     --cat-rulers-block-color: rgba(0,0,0,0.86);
 }

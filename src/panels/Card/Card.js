@@ -17,14 +17,17 @@ import {
     Footer,
     Gradient,
     Button,
-    Snackbar
+    Snackbar,
+    Switch,
+    Link
 } from '@vkontakte/vkui/';
 import {
     Icon28MarketOutline,
     Icon28StatisticsOutline,
     Icon28SortOutline,
     Icon28AllCategoriesOutline,
-    Icon28CopyOutline
+    Icon28CopyOutline,
+    Icon28BugOutline
 } from '@vkontakte/icons';
 
 class Card extends React.Component {
@@ -67,6 +70,20 @@ class Card extends React.Component {
         bridge.send("VKWebAppCopyText", {"text": `${fetchedUser.id}` });
     }
 
+    eruda = async () => {
+        await this.setState({eruda: !this.state.eruda})
+        this.state.eruda ? window.eruda.init() : window.eruda.destroy()
+    }
+
+    getHref() {
+        let text;
+        const { fetchedUser } = this.props;
+    
+          text = `https://vk.com/id${fetchedUser.id}`;
+    
+        return text;
+      }
+
 	render () {
 		const {
 			id,
@@ -92,7 +109,7 @@ class Card extends React.Component {
                     textAlign: 'center',
                     padding: 32,
                 }}>
-                    <div style={{position: "relative"}}><Avatar size={96} src={fetchedUser.photo_200} /><div className="position-card">{user && user.position}</div></div>
+                    <div style={{position: "relative"}}><a href={this.getHref()} target="_blank"><Avatar size={96} src={fetchedUser.photo_200} /><div className="position-card">{user && user.position}</div></a></div>
                     <Title style={{ marginBottom: 8, marginTop: 20 }} level="2" weight="medium">{`${fetchedUser.first_name} ${fetchedUser.last_name}`}</Title>
                     <Text style={{ marginBottom: 16, color: 'var(--text_secondary)' }}>ID ВКонтакте: {fetchedUser.id}</Text>
                     <Button
@@ -140,7 +157,19 @@ class Card extends React.Component {
                     Ваша позиция в топе:
                 </SimpleCell>
                 <Spacing separator="center" size={8}/>
-                <CellButton href="https://vk.com/market-182611749" target="_blank" before={<Icon28MarketOutline />}>Магазин</CellButton>
+                <CellButton
+                    href="https://vk.com/market-182611749"
+                    target="_blank"
+                    before={<Icon28MarketOutline />}
+                >
+                    Магазин
+                </CellButton>
+                <CellButton 
+                    before={<Icon28BugOutline />}
+                    after={<Switch onChange={() => this.eruda()} />}
+                >
+                    Eruda
+                </CellButton>
                 {/*<CellButton onClick={go} data-to="rating" before={<Icon28StatisticsOutline />}>Рейтинг</CellButton>*/}
             </div>
             <Footer onClick={go} data-to="info">
