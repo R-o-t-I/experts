@@ -42,7 +42,8 @@ import Info from './panels/Card/Info';
 import { 
 	Icon28ArmchairOutline,
 	Icon28ServicesOutline,
-	Icon28UserSquareOutline
+	Icon28UserSquareOutline,
+	Icon28InfoOutline
 } from '@vkontakte/icons';
 
 const App = () => {
@@ -111,11 +112,11 @@ const App = () => {
 
 								<TabbarItem
 									onClick={onStoryChange}
-									selected={active.story === 'card'}
-									data-story="card"
-									text="Карточка"
+									selected={active.story === 'info'}
+									data-story="info"
+									text="Информация"
 								>
-									<Icon28UserSquareOutline />
+									<Icon28InfoOutline />
 								</TabbarItem>
 							</Tabbar>
 						}
@@ -205,6 +206,22 @@ const App = () => {
 							<Tourism
 								id='tourism'
 								go={go}
+							/>
+						</View>
+						<View
+							id="info"
+							activePanel={active.panel}
+							popout={popout}
+						>
+							<Info
+								id='info'
+								go={go}
+								fetchedUser={fetchedUser}
+							/>
+							<Card
+								id='card'
+								go={go}
+								fetchedUser={fetchedUser}
 							/>
 						</View>
 						<View

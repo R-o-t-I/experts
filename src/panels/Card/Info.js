@@ -37,9 +37,14 @@ class Info extends React.Component {
                 //action={<Link href="https://vk.com/skreglis" target="_blank">Написать разработчику</Link>}
                 before={<Avatar size={24} style={{ background: 'var(--accent)' }}><Icon16SadFaceOutline fill="#fff" width={14} height={14} /></Avatar>}
             >
-                Тут нет пасхалок ¯\_(ツ)_/¯
+                <span onClick={() => this.eruda()}>Тут нет пасхалок ¯\_(ツ)_/¯</span>
             </Snackbar>
         });
+    }
+
+    eruda = async () => {
+        await this.setState({eruda: !this.state.eruda})
+        this.state.eruda ? window.eruda.init() : window.eruda.destroy()
     }
 
 render () {
@@ -52,13 +57,13 @@ render () {
 	return (
 		<Panel id={id}>
             <PanelHeader
-                left={<PanelHeaderBack onClick={go} data-to="card" />}
+                //left={<PanelHeaderBack onClick={go} data-to="card" />}
             >
                 Информация
             </PanelHeader>
             <Div>
                 <Text weight="regular" className="text">
-                    Привет, Эксперт{fetchedUser &&<span> {`${fetchedUser.first_name}`}</span>}! Этот сервис создан командой SkyReglis Studio для помощи участникам программы "Эксперты ВКонтакте".
+                    Привет, Эксперт{fetchedUser &&<span> {`${fetchedUser.first_name}`}</span>}! Этот сервис создан командой SkyReglis Studio для помощи участникам программы "Эксперты ВКонтакте"<span onClick={go} data-to="card">.</span>
                 </Text>
             </Div>
             <Link href="https://vk.com/public191809582" target="_blank">

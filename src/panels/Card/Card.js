@@ -6,6 +6,7 @@ import {
     Avatar,
 	Panel,
 	PanelHeader,
+    PanelHeaderBack,
     Title,
     Text,
     Div,
@@ -19,7 +20,8 @@ import {
     Button,
     Snackbar,
     Switch,
-    Link
+    Link,
+    Header
 } from '@vkontakte/vkui/';
 import {
     Icon28MarketOutline,
@@ -70,11 +72,6 @@ class Card extends React.Component {
         bridge.send("VKWebAppCopyText", {"text": `${fetchedUser.id}` });
     }
 
-    eruda = async () => {
-        await this.setState({eruda: !this.state.eruda})
-        this.state.eruda ? window.eruda.init() : window.eruda.destroy()
-    }
-
     getHref() {
         let text;
         const { fetchedUser } = this.props;
@@ -97,7 +94,7 @@ class Card extends React.Component {
 
 		return (
 		<Panel id={id}>
-			<PanelHeader>
+			<PanelHeader left={<PanelHeaderBack onClick={go} data-to="info" />}>
                 Карточка
             </PanelHeader>
             {fetchedUser &&
@@ -132,6 +129,7 @@ class Card extends React.Component {
                 </Gradient>
             }
             <div>
+                <Header mode="secondary">Информация</Header>
                 <SimpleCell
                     multiline
                     disabled
@@ -157,18 +155,13 @@ class Card extends React.Component {
                     Ваша позиция в топе:
                 </SimpleCell>
                 <Spacing separator="center" size={8}/>
+                <Header mode="secondary">Магазин</Header>
                 <CellButton
                     href="https://vk.com/market-182611749"
                     target="_blank"
                     before={<Icon28MarketOutline />}
                 >
                     Магазин
-                </CellButton>
-                <CellButton 
-                    before={<Icon28BugOutline />}
-                    after={<Switch onChange={() => this.eruda()} />}
-                >
-                    Eruda
                 </CellButton>
                 {/*<CellButton onClick={go} data-to="rating" before={<Icon28StatisticsOutline />}>Рейтинг</CellButton>*/}
             </div>
